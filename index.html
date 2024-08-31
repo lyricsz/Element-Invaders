@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: "Comic Sans MS";
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            min-height: 20vh;
+            max-height: 20vh;
+        }
+        main{
+            min-height: 70vh;
+            max-height: 70vh;
+            text-align: center;
+        }
+        main button{
+            height: 10vh;
+            margin: 2vh;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Element Invaders</h1>
+    </header>
+    <main>
+        <button class="btn">Play</button>
+        <button class="btn">Highscore</button>
+        <button class="btn">About</button>
+        <button class="btn">Exit</button>
+    </main>
+    <script>
+        const btns = document.querySelectorAll(".btn");
+        const locArray = ['game', 'highscore.html', 'about.html',]
+
+        btns.forEach((btn, index) => {
+            btn.onclick = () => {window.location = locArray[index]};
+        })
+    </script>
+</body>
+</html>

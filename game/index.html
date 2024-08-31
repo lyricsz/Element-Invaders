@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Invaders - Play </title>
+    <style>
+        *{
+            font-family: "Comic Sans MS", Tahoma;
+            font-weight: 500;
+            color: #232323;
+            text-shadow: 0px 0px 1px silver;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background-color: black;
+        }
+        canvas{
+            object-fit: contain;
+            width: 100%;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            font-smooth: never;
+            -webkit-font-smoothing : none;
+        }
+        #gameOver{
+            position: absolute;
+            background-color: antiquewhite;
+            width: 80%;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            padding: 6px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+        #gameOver div {
+            position: relative;
+            filter: drop-shadow(0px 0px 4px gray);
+            margin-bottom: 4%;
+        }
+        #gameOver div #home{
+            left: 10%;
+        }
+        #gameOver div #home, #gameOver div #replay{
+            width: 30%;
+            top: 10%;
+            position: absolute;
+            background-color: transparent;
+            border: 2px double silver;
+            border-radius: 10px 0px 10px 0;
+            padding: 8px;
+            font-weight: 600;
+            background: linear-gradient(rgba(192, 192, 192, 0.8), rgba(192, 192, 192, 0.5), rgba(192, 192, 192, 0.8));
+        }
+        #gameOver div #replay{
+            right: 10%;
+        }
+        img{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="dialogue">
+
+    </div>
+    <div id="gameOver">
+        <p>
+        Game Over!!! <br>
+        </p>
+        <p>
+        Your current score: <span id="currentScore"></span><br>
+        Your high score: <span id="highScore"></span><br>
+        </p>
+        <div>
+            <button id="home">Home</button>
+            <br>
+            <button id="replay" onclick="play()">Replay</button>
+        </div>
+    </div>
+    <img src="./img/cyclops1.png">
+    <img src="./img/cyclops2.png">
+    <img src="./img/sprite.png">
+    <img src="./img/background1.png">
+    <img src="./img/playerlog1.png">
+    <canvas id="canvas" width="640" height="360">
+        Canvas is not supported. Please upgrade your browser or visit caniuse.com for more information.
+    </canvas>
+    <script src="script/app.js" type="module"></script>
+</body>
+</html>

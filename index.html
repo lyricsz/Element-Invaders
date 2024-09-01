@@ -11,9 +11,18 @@
             margin: 0;
             padding: 0;
         }
+        body{
+            height: 100vh;
+            overflow: hidden;
+            background-image: url("./game/img/sprite.png");
+            background-size: 20vh;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
         header{
             min-height: 20vh;
             max-height: 20vh;
+            align-content: center;
+            text-align: center;
         }
         main{
             min-height: 70vh;
@@ -21,9 +30,19 @@
             text-align: center;
         }
         main button{
-            height: 10vh;
-            margin: 2vh;
-            width: 70%;
+            height: 14vh;
+            margin-top: .1vh;
+            width: 90%;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            background-image: url("./game/img/menu_xp.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-weight: 800;
         }
     </style>
 </head>
@@ -34,8 +53,16 @@
     <main>
         <button class="btn">Play</button>
         <button class="btn">Highscore</button>
+        <button class="btn">Help</button>
         <button class="btn">About</button>
         <button class="btn">Exit</button>
+        <audio src="./assets/bg.ogg" id="bg" style="display: none;"></audio>
+        <script>
+            window.onload = () => {
+                document.getElementById("bg").volume = 0.5;
+                document.getElementById("bg").play();
+            }
+        </script>
     </main>
     <script>
         const btns = document.querySelectorAll(".btn");
@@ -43,7 +70,12 @@
 
         btns.forEach((btn, index) => {
             btn.onclick = () => {window.location = locArray[index]};
-        })
+        });
+
+        if(window.localStorage.getItem("elementsInvadersHighscore") == undefined || window.localStorage.getItem("elementsInvadersHighscore") == " "){
+            window.localStorage.setItem("elementsInvadersHighscore", 0);
+        }
+
     </script>
 </body>
 </html>

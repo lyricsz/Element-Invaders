@@ -10,13 +10,17 @@
             font-weight: 500;
             color: #232323;
             text-shadow: 0px 0px 1px silver;
+            box-sizing: border-box;
         }
 
         body {
             margin: 0;
             display: flex;
             height: 100vh;
-            background-color: black;
+            overflow: hidden;
+            background-image: url("./img/sprite.png");
+            background-size: 20vh;
+            background-color: rgba(0, 0, 0, 0.5);
         }
         canvas{
             object-fit: contain;
@@ -24,7 +28,7 @@
             image-rendering: crisp-edges;
             image-rendering: pixelated;
             font-smooth: never;
-            -webkit-font-smoothing : none;
+            -webkit-font-smoothing : never;
         }
         #gameOver{
             position: absolute;
@@ -63,6 +67,12 @@
         img{
             display: none;
         }
+        li{
+            list-style: none;
+        }
+        audio{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -70,12 +80,18 @@
 
     </div>
     <div id="gameOver">
-        <p>
+        <p style="font-size: xx-large;">
         Game Over!!! <br>
         </p>
         <p>
         Your current score: <span id="currentScore"></span><br>
         Your high score: <span id="highScore"></span><br>
+        <ul>
+            <li>Earth Restored: <span id="earth"></span></li>
+            <li>Water Restored: <span id="water"></span></li>
+            <li>Fire Restored: <span id="fire"></span></li>
+            <li>Air Restored: <span id="air"></span></li>
+        </ul>
         </p>
         <div>
             <button id="home">Home</button>
@@ -83,6 +99,9 @@
             <button id="replay" onclick="play()">Replay</button>
         </div>
     </div>
+    <audio src="./../assets/theme.ogg" id="bg"></audio>
+    <audio src="./../assets/placeLog.ogg" id="log"></audio>
+    <audio src="./../assets/enemyUp.ogg" id="enemy"></audio>
     <img src="./img/cyclops1.png">
     <img src="./img/cyclops2.png">
     <img src="./img/sprite.png">

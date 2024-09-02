@@ -38,24 +38,18 @@
             background-color: transparent;
             border: none;
             outline: none;
-            background-image: url("./game/img/menu_xp.png");
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
+            font-size: xx-large;
             font-weight: 800;
+            box-shadow: 0px 0px 63px gray;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Element Invaders</h1>
+        <h1>Element Invaders - Help</h1>
     </header>
     <main>
-        <button class="btn">Play</button>
-        <button class="btn">Highscore</button>
-        <button class="btn">Help</button>
-        <button class="btn">About</button>
-        <button class="btn">Exit</button>
+        <button id="btn">Ensure all element find their way to balance... And restore earth, Sanio</button>
         <audio src="./assets/bg.ogg" id="bg" style="display: none;"></audio>
         <script>
             window.onload = () => {
@@ -65,16 +59,6 @@
         </script>
     </main>
     <script>
-        const btns = document.querySelectorAll(".btn");
-        const locArray = ['game', 'highscore.html', 'help.html','about.html']
-
-        btns.forEach((btn, index) => {
-            btn.onclick = () => {window.location = locArray[index]};
-        });
-
-        if(window.localStorage.getItem("elementsInvadersHighscore") == undefined || window.localStorage.getItem("elementsInvadersHighscore") == " "){
-            window.localStorage.setItem("elementsInvadersHighscore", 0);
-        }
 
     </script>
 </body>
